@@ -23,6 +23,8 @@ Configure it: ```ds @jekyll config```
 
 Add to wsproxy: ```ds wsproxy add jekyll.example.org```
 
+To access site use port 4000 with hostname like this ```jekyll.example.org:4000```
+
 Add New project: ```ds @jekyll project-add project```
 
 Remove a project: ```ds @jekyll project-rm <Project>```
