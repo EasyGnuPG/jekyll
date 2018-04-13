@@ -32,7 +32,8 @@ Change config file of given project: ```ds @jekyll project-config <project>```
 Run the available projec: ```ds @jekyll project-run <project>```
 
 Add post to given project: ```ds @jekyll post-add <project> <post_file_hard_link>```
-Note: The post file shold match the sample given in samples/_posts
+
+Note: The post file shold match the sample format given in samples/_posts
 
 Remove the post from given project: ```ds @jekyll post-rm <project> <post_file_name>``` 
          
