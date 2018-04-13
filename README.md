@@ -13,37 +13,27 @@ Change dir to /opt/docker-scripts/jekyll
 
 Create a directory for the container: ```ds init jekyll @jekyll```
 
-Fix the settings: cd /var/ds/hello/:
-"nano settings.sh"
+Fix the settings: cd /var/ds/hello/: ```nano settings.sh```
 
-Build image: 
-"ds @jekyll build" 
+Build image: ```ds @jekyll build``` 
 
-Create the container: 
-"ds @jekyll create" 
+Create the container: ```ds @jekyll create``` 
 
-Configure it: 
-"ds @jekyll config"
+Configure it: ```ds @jekyll config```
 
-Add to wsproxy: 
-"ds wsproxy add jekyll.example.org"
+Add to wsproxy: ```ds wsproxy add jekyll.example.org```
 
-Add New project:
-"ds @jekyll project-add project"
+Add New project: ```ds @jekyll project-add project```
 
-Remove a project:
-"ds @jekyll project-rm Project"
+Remove a project: ```ds @jekyll project-rm <Project>```
 
-Change config file of given project:
-"ds @jekyll project-config project" 
+Change config file of given project: ```ds @jekyll project-config <project>``` 
 
-Run the available projec:
-"ds @jekyll project-run project"
+Run the available projec: ```ds @jekyll project-run <project>```
 
-Add post to given project:
-"ds @jekyll post-add project <post_file_hard_link>"
+Add post to given project: ```ds @jekyll post-add <project> <post_file_hard_link>```
 
-Remove the post from given project: ```ds @jekyll post-rm '<project>' <post_file_name>``` 
+Remove the post from given project: ```ds @jekyll post-rm <project> <post_file_name>``` 
          
          
 
