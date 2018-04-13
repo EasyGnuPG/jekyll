@@ -40,7 +40,7 @@ Remove a project:
 Change config file of given project:
 "ds @jekyll project-config <project>" 
 
-Run the available project:          
+Run the available projec:
 "ds @jekyll project-run <project>"
 
 Add post to given project:
