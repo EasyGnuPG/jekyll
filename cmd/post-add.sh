@@ -1,6 +1,6 @@
-cmd_post-add()_help() {
+cmd_post-add_help() {
     cat <<_EOF
-    post-add <project> <post_file_link> 
+    post-add <project> <post_file_hard_link> 
          Add post to given project.
 _EOF
 }
@@ -9,10 +9,10 @@ cmd_post-add() {
     # copy post_file in post dirictory 
     local project=$1
     local post=$2
-    [[ -n $project ]] || fail "Usage:\n $(cmd_clone_help)"
+    [[ -n $project ]] || fail "Usage:\n $(cmd_post-add_help)"
+    [[ -n $post ]] || fail "Usage:\n $(cmd_post-rm_help)"
     
-    [[ -f $post ]] || cp $APP_DIR/$post .
     
-    docker cp $post $CONTAINER:$project/_posts/
+    cp $post $project/_posts/
     
 }

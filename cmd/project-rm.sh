@@ -8,7 +8,7 @@ _EOF
 cmd_project-rm() {
     # Delete new project 
     local project=$1
-    [[ -n $project ]] || fail "Usage:\n $(cmd_clone_help)"
+    [[ -n $project ]] || fail "Usage:\n $(cmd_project-rm_help)"
 
      
     rm -rf $project

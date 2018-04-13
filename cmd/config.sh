@@ -9,6 +9,6 @@ _EOF
 cmd_config() {
         
     ds inject set_prompt.sh
-     
-    
+    apt install build-essential ruby-full 
+    gem install bundler minima jekyll-feed
 }

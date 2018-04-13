@@ -8,7 +8,7 @@ _EOF
 cmd_project-add() {
     # create new project 
     local project=$1
-    [[ -n $project ]] || fail "Usage:\n $(cmd_clone_help)"
+    [[ -n $project ]] || fail "Usage:\n $(project-add_help)"
 
     if [[ -d $project ]]; then
         echo "The Project '$project' already exists."
