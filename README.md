@@ -6,7 +6,7 @@ Installation First install ds:
 https://github.com/docker-scripts/ds#installation Then install wsproxy
 
 Then get the scripts from github: 
-"git clone https://github.com/jd147/jekyll" 
+'''git clone https://github.com/jd147/jekyll''' 
 
 Copy repo data into /opt/docker-scripts/:
 "cp repodata /opt/docker-scripts/"
@@ -47,7 +47,7 @@ Add post to given project:
 "ds @jekyll post-add project <post_file_hard_link>"
 
 Remove the post from given project:
-"ds @jekyll post-rm '<project>' <post_file_name>" 
+'''ds @jekyll post-rm '<project>' <post_file_name>''' 
          
          
 
