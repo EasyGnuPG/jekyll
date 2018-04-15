@@ -13,7 +13,7 @@ cmd_project-rm() {
     if [[ -d $project ]]; then 
          rm -rf $project
     else
-        echo "There is no project lke this" 
+        echo "There is no project like this" 
     fi 
     
      
