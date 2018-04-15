@@ -11,8 +11,12 @@ cmd_project-config() {
     
     [[ -n $project ]] || fail "Usage:\n $(cmd_project-config_help)"
     
+    if [[ -d $project ]]; then 
+         nano $project/_config.yml
+    else
+        echo "There is no project lke this" 
+    fi 
     
-    nano $project/_config.yml
     
     
 }
