@@ -10,8 +10,12 @@ cmd_project-rm() {
     local project=$1
     [[ -n $project ]] || fail "Usage:\n $(cmd_project-rm_help)"
 
-     
-    rm -rf $project
+    if [[ -d $project ]]; then 
+         rm -rf $project
+    else
+        echo "There is no project lke this" 
+    fi 
+    
      
     
 }
