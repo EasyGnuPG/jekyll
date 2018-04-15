@@ -10,7 +10,7 @@ cmd_post-add() {
     local project=$1
     local post=$2
     [[ -n $project ]] || fail "Usage:\n $(cmd_post-add_help)"
-    [[ -n $post ]] || fail "Usage:\n $(cmd_post-rm_help)"
+    [[ -n $post ]] || fail "Usage:\n $(cmd_post-add_help)"
     
     
     cp $post $project/_posts/
