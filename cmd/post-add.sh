@@ -13,12 +13,7 @@ cmd_post-add() {
     [[ -n $post ]] || fail "Usage:\n $(cmd_post-add_help)"
     
     if [[ -d $project ]]; then 
-         if [[ -d $project ]]; then 
-         cp $post $project/_posts/
-        else
-        echo "There is already a post exist with this name"
-        echo "Delete it first with: ds post-rm $post"
-        fi
+        cp -n $post $project/_posts/
     else
         echo "There is no project lke this" 
     fi
