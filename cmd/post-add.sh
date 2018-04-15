@@ -13,6 +13,6 @@ cmd_post-add() {
     [[ -n $post ]] || fail "Usage:\n $(cmd_post-add_help)"
     
     
-    cp $post $project/_posts/
+    cp $post $project/_posts/ || fail "Usage:\n $(cmd_post-add_help)"
     
 }
