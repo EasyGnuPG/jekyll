@@ -19,7 +19,7 @@ cmd_post-rm() {
         echo "There is no post exist with this name"
         fi
     else
-        echo "There is no project lke this" 
+        echo "There is no project like this" 
     fi
     
     
