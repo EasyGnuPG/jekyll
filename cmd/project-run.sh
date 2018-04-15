@@ -8,7 +8,7 @@ _EOF
 cmd_project-run() {
     # start project
     local project=$1
-    [[ -n $project ]] || fail "Usage:\n $(project-run_help)"
+    [[ -n $project ]] || fail "Usage:\n $(cmd_project-run_help)"
      
     cd $project/
     jekyll serve --host 127.0.0.1 
