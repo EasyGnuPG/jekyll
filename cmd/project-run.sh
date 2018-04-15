@@ -10,7 +10,10 @@ cmd_project-run() {
     local project=$1
     [[ -n $project ]] || fail "Usage:\n $(cmd_project-run_help)"
      
-    cd $project/
-    jekyll serve --host 127.0.0.1 
-    
+    if [[ -d $project ]]; then 
+         cd $project/
+         jekyll serve --host 127.0.0.1
+    else
+        echo "There is no project lke this" 
+    fi
 }
