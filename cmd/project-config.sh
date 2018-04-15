@@ -14,7 +14,7 @@ cmd_project-config() {
     if [[ -d $project ]]; then 
          nano $project/_config.yml
     else
-        echo "There is no project lke this" 
+        echo "There is no project like this" 
     fi 
     
     
