@@ -12,8 +12,17 @@ cmd_post-rm() {
     [[ -n $project ]] || fail "Usage:\n $(cmd_post-rm_help)"
     [[ -n $post ]] || fail "Usage:\n $(cmd_post-rm_help)"
 
+    if [[ -d $project ]]; then 
+        if [[ -d $post ]]; then 
+         rm -rf $project/_posts/$post
+        else
+        echo "There is already a post exist with this name"
+        echo "Delete it first with: ds post-rm $post"
+        fi
+    else
+        echo "There is no project lke this" 
+    fi
     
     
-    rm -rf $project/_posts/$post
     
 }
