@@ -13,9 +13,9 @@ cmd_post-add() {
     [[ -n $post ]] || fail "Usage:\n $(cmd_post-add_help)"
     
     if [[ -d $project ]]; then 
-        cp -n $post $project/_posts/ || fail "post already exist"
+        cp -n $post $project/_posts/ 
     else
-        echo "There is no project lke this" 
+        echo "There is no project like this" 
     fi
     
     
