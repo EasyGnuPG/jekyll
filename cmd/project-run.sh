@@ -14,6 +14,6 @@ cmd_project-run() {
          cd $project/
          jekyll serve --host 127.0.0.1
     else
-        echo "There is no project lke this" 
+        echo "There is no project like this" 
     fi
 }
