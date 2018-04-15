@@ -16,8 +16,7 @@ cmd_post-rm() {
         if [[ -d $post ]]; then 
          rm -rf $project/_posts/$post
         else
-        echo "There is already a post exist with this name"
-        echo "Delete it first with: ds post-rm $post"
+        echo "There is no post exist with this name"
         fi
     else
         echo "There is no project lke this" 
