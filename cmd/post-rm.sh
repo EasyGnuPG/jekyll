@@ -13,11 +13,7 @@ cmd_post-rm() {
     [[ -n $post ]] || fail "Usage:\n $(cmd_post-rm_help)"
 
     if [[ -d $project ]]; then 
-        if [[ -d $post ]]; then 
-         rm -rf $project/_posts/$post
-        else
-        echo "There is no post exist with this name"
-        fi
+        rm -r $project/_posts/$post
     else
         echo "There is no project like this" 
     fi
