@@ -5,5 +5,6 @@ cmd_create_help() {
 
 _EOF
 }
-
+cmd_create() {
+}
 
