@@ -3,7 +3,7 @@ Jekyll
 Jekyll Container using ds framework
 
 
-##Installation 
+## Installation 
 	-First install `ds` and `wsproxy`: 
 		+ https://github.com/docker-scripts/ds#installation 
 		+ https://github.com/docker-script/wsproxy#installation
@@ -26,10 +26,10 @@ Jekyll Container using ds framework
 
 	-Add to wsproxy: ```ds wsproxy add jekyll.example.org```
 
-##Access
+## Access
 To access site use port 4000 with hostname like this ```jekyll.example.org:4000```
 
-##Other Commands
+## Other Commands
 
 	-Add New project: ```ds @jekyll project-add project```
 
