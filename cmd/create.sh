@@ -5,4 +5,7 @@ cmd_create_help() {
 
 _EOF
 }
-cmd_create()
+rename_function cmd_create orig_cmd_create
+cmd_create(){
+	#there are no log file for jekyll in offical version so no log file mount
+}
