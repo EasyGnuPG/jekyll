@@ -14,7 +14,8 @@ CMD ["/sbin/init"]
 RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get -y install git curl wget jekyll
-    
+RUN apt install -y build-essential ruby-full 
+RUN gem install bundler minima jekyll-feed    
 
 
             

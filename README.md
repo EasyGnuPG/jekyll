@@ -1,44 +1,51 @@
-# Jekyll
+Jekyll
+======
 Jekyll Container using ds framework
 
 
-Installation First install ds: 
-https://github.com/docker-scripts/ds#installation Then install wsproxy
+## Installation 
+	
+  - First install `ds` and `wsproxy`: 
+	+ https://github.com/docker-scripts/ds#installation 
+	+ https://github.com/docker-script/wsproxy#installation
 
-Then get the scripts from github: ```git clone https://github.com/jd147/jekyll```
+  - Then get the scripts from github: `git clone https://github.com/jd147/jekyll` or `git pull jekyll`
 
-Copy repo data into /opt/docker-scripts/: ```cp repodata /opt/docker-scripts/```
+  - Change dir to /opt/docker-scripts/jekyll
 
-Change dir to /opt/docker-scripts/jekyll
+  - Create a directory for the container: `ds init jekyll @jekyll`
 
-Create a directory for the container: ```ds init jekyll @jekyll```
+  - Fix the settings:
+	  ` cd /var/ds/hello/
+	    nano settings.sh`
 
-Fix the settings: cd /var/ds/hello/: ```nano settings.sh```
+  - Build image: `ds @jekyll build` 
 
-Build image: ```ds @jekyll build``` 
+  - Create the container: `ds @jekyll create` 
 
-Create the container: ```ds @jekyll create``` 
+  - Configure it: `ds @jekyll config`
 
-Configure it: ```ds @jekyll config```
+  - Add to wsproxy: `ds wsproxy add jekyll.example.org`
 
-Add to wsproxy: ```ds wsproxy add jekyll.example.org```
+## Access
 
-To access site use port 4000 with hostname like this ```jekyll.example.org:4000```
+To access site use port 4000 with hostname like this `jekyll.example.org:4000`
 
-Add New project: ```ds @jekyll project-add project```
+## Other Commands
 
-Remove a project: ```ds @jekyll project-rm <Project>```
+  - Add New project: `ds @jekyll project-add project`
 
-Change config file of given project: ```ds @jekyll project-config <project>``` 
+  - Remove a project: `ds @jekyll project-rm <Project>`
 
-Run the available projec: ```ds @jekyll project-run <project>```
+  - Change config file of given project: `ds @jekyll project-config <project>` 
 
-Add post to given project: ```ds @jekyll post-add <project> <post_file_hard_link>```
+  - Run the available projec: `ds @jekyll project-run <project>`
 
-Note: The post file shold match the sample format given in samples/_posts
-Note: It rewrite the old file 
+  - Add post to given project: `ds @jekyll post-add <project> <post_file_hard_link>`
+	+ Note: The post file shold match the sample format given in samples/_posts
+	+ Note: It rewrite the old file 
 
-Remove the post from given project: ```ds @jekyll post-rm <project> <post_file_name>``` 
+  - Remove the post from given project: `ds @jekyll post-rm <project> <post_file_name>` 
          
          
 
