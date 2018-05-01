@@ -12,7 +12,7 @@ cmd_project-run() {
      
     if [[ -d $project ]]; then 
          cd $project/
-         jekyll serve --host 127.0.0.1
+         jekyll serve --port 80 --host 127.0.0.1
     else
         echo "There is no project like this" 
     fi
