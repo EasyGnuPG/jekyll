@@ -12,11 +12,13 @@ cmd_project-rm() {
     [[ -n $project ]] || fail "Usage:\n $(cmd_project-rm_help)"
 
     if [[ -d $project ]]; then 
-         rm -rf $project
+        rm -rf $project
 	if [[ $option=='-r']]
 		rm -rf /var/www/jekyll/$project
 	else
 		echo "$(cmd_project-rm_help)" 
+    elif [[ -n $option ]];then
+	echo "Project with it's data deleted"
     else
         echo "There is no project like this" 
     fi 
