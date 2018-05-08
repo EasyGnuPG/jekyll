@@ -16,6 +16,8 @@ cmd_project-add() {
         exit 1
     fi 
     jekyll new $project
+    DOMAIN=$project.jekyll.example.org
+    ds apache-fix.sh
      
     
 }

@@ -16,6 +16,7 @@ RUN apt-get update && \
     apt-get -y install git curl wget jekyll
 RUN apt install -y build-essential ruby-full 
 RUN gem install bundler minima jekyll-feed    
+RUN apt install -y nano apache2-full
 
 
             
