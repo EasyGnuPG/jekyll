@@ -6,7 +6,7 @@ _EOF
 }
 
 cmd_project-add() {
-    # create new project 
+    # create new project
     local project=$1
     [[ -n $project ]] || fail "Usage:\n $(cmd_project-add_help)"
 
@@ -14,10 +14,9 @@ cmd_project-add() {
         echo "The Project '$project' already exists."
         echo "Delete it first with: ds project-rm $project"
         exit 1
-    fi 
+    fi
     jekyll new $project
     DOMAIN=$project.jekyll.example.org
-    ds apache-fix.sh
-     
-    
+    ds inject apache-fix.sh $DOMAIN $project
+
 }

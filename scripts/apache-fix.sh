@@ -1,5 +1,8 @@
 #!/bin/bash -x
 
+DOMAIN=$1
+project=$2 
+
 cat <<EOF > /etc/apache2/sites-availabe/jekyll.conf
 <VirtualHost *:80>
 	ServerName $DOMAIN

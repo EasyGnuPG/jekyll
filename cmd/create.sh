@@ -9,6 +9,6 @@ rename_function cmd_create ds_cmd_create
 
 cmd_create(){
 	mkdir -p  /var/jekyll
-	ds_cmd_create \ 
+	ds_cmd_create \
 		--workdir /var/jekyll
 }
