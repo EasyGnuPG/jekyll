@@ -5,11 +5,13 @@ cmd_create_help() {
 
 _EOF
 }
-rename_function cmd_create ds_cmd_create
+
+rename_function cmd_create dsi_cmd_create
 cmd_create() {
-    mkdir -p  var-data/jekyll
-    ds_cmd_create \
-	--mount type=bind,src=$(pwd)/var-data,dst=/var \
-	--workdir /var/jekyll 
-	
+	    mkdir -p  var-data/jekyll
+	    dsi_cmd_create \
+		--mount type=bind,src=$(pwd)/var-data,dst=/var \
+		--workdir /var/jekyll \
+	        "$@"	
+			
 }

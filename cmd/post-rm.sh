@@ -11,7 +11,7 @@ cmd_post-rm() {
     local post=$2
     [[ -n $project ]] || fail "Usage:\n $(cmd_post-rm_help)"
     [[ -n $post ]] || fail "Usage:\n $(cmd_post-rm_help)"
-
+    cd var-data/jekyll
     if [[ -d $project ]]; then 
         rm -r $project/_posts/$post
     else
