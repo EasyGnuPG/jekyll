@@ -11,12 +11,12 @@ cmd_post-add() {
     local post=$2
     [[ -n $project ]] || fail "Usage:\n $(cmd_post-add_help)"
     [[ -n $post ]] || fail "Usage:\n $(cmd_post-add_help)"
-    
+    cd  var-data/jekyll
     if [[ -d $project ]]; then 
-        cp $post $project/_posts/ 
+    	cp $post $project/_posts/ 
     else
-        echo "There is no project like this" 
-    fi
+	echo "There is no project like this" 
+    fi 
     
     
 }

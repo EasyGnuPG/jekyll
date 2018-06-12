@@ -11,13 +11,11 @@ RUN find /etc/systemd/system \
 RUN systemctl set-default multi-user.target
 CMD ["/sbin/init"]
 
-RUN apt-get update && \
-    apt-get -y upgrade && \
-    apt-get -y install git curl wget jekyll
-RUN apt install -y build-essential ruby-full 
-RUN gem install bundler minima jekyll-feed    
+RUN apt-get update ; \
+    apt-get -y install git curl wget nano apache2 sudo; \ 
+    apt install -y ruby ruby-dev build-essential; \ 
+    apt-get -y upgrade
+RUN sudo gem update --system && \	
+	sudo gem install bundler &&\
+	sudo gem install jekyll minima 
 
-
-            
-
-WORKDIR /host

@@ -5,9 +5,13 @@ cmd_create_help() {
 
 _EOF
 }
-rename_function cmd_create ds_cmd_create
 
-cmd_create(){
-	#there are no log file for jekyll in offical version so no log file mount	
-	ds_cmd_create
+rename_function cmd_create dsi_cmd_create
+cmd_create() {
+	    mkdir -p  var-data/jekyll
+	    dsi_cmd_create \
+		--mount type=bind,src=$(pwd)/var-data,dst=/var \
+		--workdir /var/jekyll \
+	        "$@"	
+			
 }
