@@ -1,6 +1,6 @@
 cmd_project-rm_help() {
     cat <<_EOF
-    project-rm <Project> <option>
+    project-rm <Project>
          Remove a project.
     Option :
 	-r : to remove all webdata with project    
@@ -13,6 +13,13 @@ cmd_project-rm() {
     local option=$2   
     local project=$1
     [[ -n $project ]] || fail "Usage:\n $(cmd_project-rm_help)"
-
-    ds inject jekyll-rm.sh  $project $option 
+    if [[ $option == '-r' ]]; then
+	ds inject jekyll-rm.sh  $project  
+        ds inject jekyll-apache2-config-del.sh $project
+    elif [[ -n $option ]];then	
+	ds inject jekyll-rm.sh  $project 
+    else
+	echo "Use right option"
+    fi	
+	
 }

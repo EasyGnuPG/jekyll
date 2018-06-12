@@ -1,7 +1,7 @@
 cmd_project-add_help() {
     cat <<_EOF
     project-add <project>
-         Add New projec;;;t
+         Add New project
 _EOF
 }
 
@@ -11,8 +11,8 @@ cmd_project-add() {
     [[ -n $project ]] || fail "Usage:\n $(cmd_project-add_help)"
 
     DOMAIN=$project.jekyll.example.org
-    ds inject jekyll-apache-fix.sh $DOMAIN $project
-    
+    ds inject jekyll-add.sh $DOMAIN $project
+    ds inject jekyll-apache2-config-add.sh $DOMAIN $project
 }
 
 

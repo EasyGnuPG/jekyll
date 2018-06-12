@@ -18,4 +18,4 @@ RUN apt-get update ; \
 RUN sudo gem update --system && \	
 	sudo gem install bundler &&\
 	sudo gem install jekyll minima 
-
+RUN jekyll -v

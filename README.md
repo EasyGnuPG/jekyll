@@ -28,13 +28,14 @@ Jekyll Container using ds framework
   
 
 ## Access
-  - ADD entry of `jekyll.example.org` in hosts file `echo "127.0.0.1 	jekyll.example.org" >> /etc/hosts`
+  - ADD entry of `<project>.jekyll.example.org` in hosts file `echo "127.0.0.1 	jekyll.example.org" >> /etc/hosts`
 
 ## Other Commands
 
   - Add New project: `ds @jekyll project-add <project>`
 
-  - Remove a project: `ds @jekyll project-rm <Project>`
+  - Remove a project: `ds @jekyll project-rm <Project> <option>`
+	+ Option '-r' :  to delete site render data also
 
   - Change config file of given project: `ds @jekyll project-config <project>` 
 
@@ -48,7 +49,7 @@ Jekyll Container using ds framework
 
   - Remove the post from given project: `ds @jekyll post-rm <project> <post_file_name>` 
      	
-  + Note: For post-add and post-rm affect blog only after RUN or BUILD 
+  - Note: For post-add and post-rm affect blog only after RUN or BUILD 
          
 
 
