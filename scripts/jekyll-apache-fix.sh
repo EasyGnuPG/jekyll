@@ -11,28 +11,64 @@ fi
 
 jekyll new $project
 
+echo $DOMAIN
 
-<<ADDTIONAL    #trying to add multi domain site
+#add multi domain site
 
 
-cat <<EOF >> /etc/apache2/sites-enabled/jekyll.conf
+cat <<EOF > /etc/apache2/sites-enabled/jekyll.conf
 <VirtualHost *:80>
-	ServerName $DOMAIN
-	DocumentRoot /var/www/jekyll/$project/
+        ServerName $DOMAIN
+        RedirectPermanent / https://$project.jekyll.example.org/
+</VirtualHost>
+
+<VirtualHost _default_:443>
+        ServerName $DOMAIN
+
+        DocumentRoot /var/www/$project
+        <Directory /var/www/$project/>
+            AllowOverride All
+        </Directory>
+
+        SSLEngine on
+        SSLCertificateFile	/etc/ssl/certs/ssl-cert-snakeoil.pem
+        SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+
+        <FilesMatch "\.(cgi|shtml|phtml|php)$">
+                        SSLOptions +StdEnvVars
+        </FilesMatch>
+</VirtualHost>
+
+EOF
+
+cat <<EOF > /etc/apache2/sites-available/jekyll.conf
+<VirtualHost *:80>
+        ServerName $DOMAIN
+        RedirectPermanent / https://$project.jekyll.example.org/
+</VirtualHost>
+
+<VirtualHost _default_:443>
+        ServerName $DOMAIN
+
+        DocumentRoot /var/www/$project
+        <Directory /var/www/$project/>
+            AllowOverride All
+        </Directory>
+
+        SSLEngine on
+        SSLCertificateFile	/etc/ssl/certs/ssl-cert-snakeoil.pem
+        SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+
+        <FilesMatch "\.(cgi|shtml|phtml|php)$">
+                        SSLOptions +StdEnvVars
+        </FilesMatch>
 </VirtualHost>
 EOF
 
-cat <<EOF >> /etc/apache2/sites-available/jekyll.conf
-<VirtualHost *:80>
-	ServerName $DOMAIN
-	DocumentRoot /var/www/jekyll/$project/
-</VirtualHost>
-EOF
-ADDTIONAL
 
 
 cat <<EOF >> /var/jekyll/$project/_config.yml
-destination: /var/www/default/
+destination: /var/www/$project/
 EOF
 
 service apache2 restart
