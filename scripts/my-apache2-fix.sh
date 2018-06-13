@@ -10,7 +10,7 @@ mkdir -p /var/log/apache2
 
 ### enable ssl etc.
 a2enmod ssl
-a2dissite 000-default
+
 service apache2 restart
 
 ### create a script to check for apache2, and start it if not running

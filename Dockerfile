@@ -15,9 +15,8 @@ RUN apt-get update ; \
     apt-get -y install git curl wget nano apache2; \ 
     apt install -y ruby-full ruby-dev build-essential; \ 
     apt-get -y upgrade;\
-    rm -rf /var/lib/apt/lists/*;
-
-RUN gem install bundler ;\
+    apt clean; \
+    gem install bundler ;\
     gem install jekyll minima;\
 	jekyll -v;\
 	ruby -v

@@ -16,7 +16,7 @@ cmd_project-rm() {
     	
     	[[ -n $project ]] || fail "Usage:\n $(cmd_project-rm_help)"
 	[[ -n $option ]]  || option='-o'
-	if [[ $option == 1 ]];then 	
+	if [[ $option == '-o' ]];then 	
 		ds inject jekyll-rm.sh  $project    	
 	
 	elif [[ $option == '-r' ]]; then
