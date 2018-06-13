@@ -54,12 +54,13 @@ Jekyll Container using ds framework
 
 ## FOR CUSTOM DOMAINS 
   
-  - Install `Bind9` for domain management:
-	+ https://github.com/docker-scripts/bind9
+  - Add custom domain to `wsproxy` : `ds @wsproxy domains-add jekyll <domain>`
   
   - Remove baseurl: "<project>/" from project config file `_config.yml` by using `ds @jekyll project-config <project>`
   
   - Add project apache config: `ds @jekyll project-config-add <project>`
 
   - Delete project apache config: `ds @jekyll project-config-rm <project>`
-        
+
+  - ADD entry of `Custom Domain` in hosts file `echo "<Custom Domain IP like 172.18.0.X> 	jekyll.example.org" >> /etc/hosts` 
+
