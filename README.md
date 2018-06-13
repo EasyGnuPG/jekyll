@@ -25,17 +25,17 @@ Jekyll Container using ds framework
 
   - Configure it: `ds @jekyll config`
 
-  
-
 ## Access
-  - ADD entry of `jekyll.example.org` in hosts file `echo "127.0.0.1 	jekyll.example.org" >> /etc/hosts`
+  - ADD entry of `jekyll.example.org` in hosts file `echo "127.0.0.1 	jekyll.example.org" >> /etc/hosts` 
+
 
 ## Other Commands
 
   - Add New project: `ds @jekyll project-add <project>`
 
-  - Remove a project: `ds @jekyll project-rm <Project>`
-
+  - Remove a project: `ds @jekyll project-rm <Project> <option>`
+	+ Option '-r' :  to delete site render data also
+	+ Option '-o' :  only delete project 
   - Change config file of given project: `ds @jekyll project-config <project>` 
 
   - Run the available project: `ds @jekyll project-run <project>`
@@ -48,8 +48,19 @@ Jekyll Container using ds framework
 
   - Remove the post from given project: `ds @jekyll post-rm <project> <post_file_name>` 
      	
-  + Note: For post-add and post-rm affect blog only after RUN or BUILD 
+  - Note: For post-add and post-rm affect blog only after RUN or BUILD 
          
+  - NOTE: If jekyll don't run inside container use `ds @jekyll inject jekyll-fix.sh`
 
+## FOR CUSTOM DOMAINS 
+  
+  - Add custom domain to `wsproxy` : `ds @wsproxy domains-add jekyll <domain>`
+  
+  - Remove baseurl: `"<project>/"` from project config file `_config.yml` by using `ds @jekyll project-config <project>`
+  	+ P.S. Wait for apache proxy server `wsproxy` to clear cache 3 min. 
+  - Add project apache config: `ds @jekyll project-config-add <project>`
 
-         
+  - Delete project apache config: `ds @jekyll project-config-rm <project>`
+
+  - ADD entry of `Custom Domain` in hosts file `echo "<Custom Domain IP like 172.18.0.X> 	jekyll.example.org" >> /etc/hosts` 
+

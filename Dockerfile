@@ -12,10 +12,12 @@ RUN systemctl set-default multi-user.target
 CMD ["/sbin/init"]
 
 RUN apt-get update ; \
-    apt-get -y install git curl wget nano apache2 sudo; \ 
-    apt install -y ruby ruby-dev build-essential; \ 
-    apt-get -y upgrade
-RUN sudo gem update --system && \	
-	sudo gem install bundler &&\
-	sudo gem install jekyll minima 
+    apt-get -y install git curl wget nano apache2; \ 
+    apt install -y ruby-full ruby-dev build-essential; \ 
+    apt-get -y upgrade;\
+    apt clean; \
+    gem install bundler ;\
+    gem install jekyll minima;\
+	jekyll -v;\
+	ruby -v
 
