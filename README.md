@@ -57,7 +57,7 @@ Jekyll Container using ds framework
   - Add custom domain to `wsproxy` : `ds @wsproxy domains-add jekyll <domain>`
   
   - Remove baseurl: "<project>/" from project config file `_config.yml` by using `ds @jekyll project-config <project>`
-  
+  	+ P.S. Wait for apache proxy server `wsproxy` to clear cache 3 min. 
   - Add project apache config: `ds @jekyll project-config-add <project>`
 
   - Delete project apache config: `ds @jekyll project-config-rm <project>`
