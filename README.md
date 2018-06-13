@@ -25,10 +25,9 @@ Jekyll Container using ds framework
 
   - Configure it: `ds @jekyll config`
 
-  
-
 ## Access
-  - ADD entry of `<project>.jekyll.example.org` in hosts file `echo "127.0.0.1 	jekyll.example.org" >> /etc/hosts`
+  - ADD entry of `jekyll.example.org` in hosts file `echo "127.0.0.1 	jekyll.example.org" >> /etc/hosts` 
+
 
 ## Other Commands
 
@@ -36,12 +35,16 @@ Jekyll Container using ds framework
 
   - Remove a project: `ds @jekyll project-rm <Project> <option>`
 	+ Option '-r' :  to delete site render data also
-
+	+ Option '-o' :  only delete project 
   - Change config file of given project: `ds @jekyll project-config <project>` 
 
   - Run the available project: `ds @jekyll project-run <project>`
 
   - Build the available project: `ds @jekyll project-build <project>`
+
+  - Add project apache config: `ds @jekyll project-config-add <project>`
+
+  - Delete project apache config: `ds @jekyll project-config-rm <project>`
 
   - Add post to given project: `ds @jekyll post-add <project> <post_file_hard_link>`
 	+ Note: The post file should match the sample format given in samples/_posts

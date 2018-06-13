@@ -70,5 +70,6 @@ IGNORE
 cat <<EOF >> /var/jekyll/$project/_config.yml
 destination: /var/www/$project/
 EOF
+mkdir /var/www/$project/
 
 

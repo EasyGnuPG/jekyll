@@ -32,6 +32,6 @@ EOF
 
 
 a2ensite $DOMAIN
-service apache2 restart
+service apache2 reload
 
 

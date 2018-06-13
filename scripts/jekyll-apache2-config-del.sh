@@ -7,7 +7,7 @@ DOMAIN=$project.jekyll.example.org
 
 
 
-rm -rf /var/www/$project
+
 
 ### delete configuration file
 
@@ -19,6 +19,6 @@ rm -rf /etc/apache2/sites-available/$DOMAIN.conf
 
 service apache2 restart
 
-echo "project with render data delected"
+echo "project render data and config delected"
 
 
