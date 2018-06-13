@@ -54,6 +54,6 @@ Jekyll Container using ds framework
      	
   - Note: For post-add and post-rm affect blog only after RUN or BUILD 
          
-
+  - NOTE: If jekyll don't run inside container use `ds @jekyll inject jekyll-fix.sh`
 
          
