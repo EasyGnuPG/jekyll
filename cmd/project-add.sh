@@ -10,9 +10,8 @@ cmd_project-add() {
     local project=$1
     [[ -n $project ]] || fail "Usage:\n $(cmd_project-add_help)"
 
-    DOMAIN=$project.jekyll.example.org
+    DOMAIN=$project.example.org
     ds inject jekyll-add.sh $DOMAIN $project
-    ds inject jekyll-apache2-config-add.sh $DOMAIN $project
 }
 
 

@@ -18,8 +18,9 @@ echo $DOMAIN
 
 
 cat <<EOF >> /var/jekyll/$project/_config.yml
-destination: /var/www/$project/
+destination: /var/www/default/$project/
+baseurl: "$project/"
 EOF
-mkdir -p /var/www/$project
+mkdir -p /var/www/default/$project
 
 

@@ -21,8 +21,7 @@ cmd_project-rm() {
 	
 	elif [[ $option == '-r' ]]; then
 		ds inject jekyll-rm-all.sh  $project  
-        	ds inject jekyll-apache2-config-del.sh $project
-    
+        	   
     	else		
 		echo "Use right option"
     	fi	

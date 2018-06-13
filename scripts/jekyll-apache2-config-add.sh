@@ -7,24 +7,28 @@ project=$2
 ### create a configuration file
 
 cat <<EOF > /etc/apache2/sites-available/$DOMAIN.conf
-NameVirtualHost *:80
+
 
 <VirtualHost *:80>
-        ServerName jekyll.example.org
+        ServerName $DOMAIN
         RedirectPermanent / https://$DOMAIN/
-	ServerAlias $DOMAIN
+	
 </VirtualHost>
 
 <VirtualHost *:443>
         ServerName $DOMAIN
-
-        DocumentRoot /var/www/$project/
-        <Directory /var/www/$project/>
-            AllowOverride None
-        </Directory>
+	
+        DocumentRoot /var/www/default/$project/
+        
+  	<Directory /var/www/default/$project/>
+ 	   	
+    	   	AllowOverride All
+    	   	
+	</Directory>
 	
 	ErrorLog /var/jekyll/$project/error.log
-        SSLEngine on
+        
+	SSLEngine on
         SSLCertificateFile	/etc/ssl/certs/ssl-cert-snakeoil.pem
         SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
 

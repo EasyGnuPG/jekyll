@@ -3,7 +3,7 @@
 
 
 project=$1
-DOMAIN=$project.jekyll.example.org
+DOMAIN=$project.example.org
 
 
 

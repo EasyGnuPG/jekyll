@@ -12,7 +12,7 @@ cmd_project-config-rm() {
 	local project=$1
     	
     	
-    	[[ -n $project ]] || fail "Usage:\n $(cmd_project-rm_help)"
+    	[[ -n $project ]] || fail "Usage:\n $(cmd_project-config-rm_help)"
 	
 	ds inject jekyll-apache2-config-del.sh $project
     

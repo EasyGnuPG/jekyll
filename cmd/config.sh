@@ -8,5 +8,5 @@ _EOF
 
 cmd_config() {
 	ds inject set_prompt.sh
-	ds inject my-apache2-fix.sh
+	ds inject apache2.sh
 }

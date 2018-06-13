@@ -33,3 +33,10 @@ cat <<'EOF' > /etc/cron.d/apachemonitor
 * * * * * root /usr/local/sbin/apachemonitor.sh >/dev/null 2>&1
 EOF
 chmod +x /etc/cron.d/apachemonitor
+
+
+a2enmod vhost_alias
+
+echo "LoadModule vhost_alias_module modules/mod_vhost_alias.so" >> /etc/apache2/apache2.conf
+
+service apache2 restart
