@@ -42,10 +42,6 @@ Jekyll Container using ds framework
 
   - Build the available project: `ds @jekyll project-build <project>`
 
-  - Add project apache config: `ds @jekyll project-config-add <project>`
-
-  - Delete project apache config: `ds @jekyll project-config-rm <project>`
-
   - Add post to given project: `ds @jekyll post-add <project> <post_file_hard_link>`
 	+ Note: The post file should match the sample format given in samples/_posts
 	+ Note: It rewrite the old file 
@@ -56,4 +52,14 @@ Jekyll Container using ds framework
          
   - NOTE: If jekyll don't run inside container use `ds @jekyll inject jekyll-fix.sh`
 
-         
+## FOR CUSTOM DOMAINS 
+  
+  - Install `Bind9` for domain management:
+	+ https://github.com/docker-scripts/bind9
+  
+  - Remove baseurl: "<project>/" from project config file `_config.yml` by using `ds @jekyll project-config <project>`
+  
+  - Add project apache config: `ds @jekyll project-config-add <project>`
+
+  - Delete project apache config: `ds @jekyll project-config-rm <project>`
+        
